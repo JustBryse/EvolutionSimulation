@@ -8,6 +8,7 @@ natsim_data <- read.table(file=file.choose(),
                          header=F, sep="/",
                          na.strings="null",
                          stringsAsFactors=F)
+
 natsim_data <- natsim_data %>%
   rename(gen=V1, id=V2, speed=V3, awareness=V4)
 
@@ -16,8 +17,6 @@ dist_data <- natsim_data %>%
   group_by(id) %>%
   mutate(lifespan = n())
 dist_data <- distinct(dist_data, id, .keep_all=T)
-dist_data <- dist_data %>%
-  mutate(sa_ratio = awareness/speed)
 
 vis <- ggplot(data = dist_data, aes(x=awareness, y=speed)) + geom_point(aes(color=id)) + geom_smooth()
 vis
