@@ -35,7 +35,7 @@ ldvis <- ggplot(data = dist_data, aes(x=awareness, y=lifespan)) + geom_point(aes
 ldvis
 
 #awareness(x) vs speed(y) vs lifespan(z)
-scatter3D(dist_data$awareness,dist_data$speed,dist_data$lifespan, phi = 30, theta = 45, ticktype = 'detailed', type='h', xlab='awareness',ylab='speed',zlab='lifespan')
+scatter3D(dist_data$awareness,dist_data$speed,dist_data$lifespan, phi = 30, theta = 45, ticktype = 'detailed', type='h', xlab='awareness',ylab='speed',zlab='lifespan',clab='lifespan')
 
 #interactive 3D render of the scatter3D graph from above
 plotrgl()
